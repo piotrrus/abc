@@ -1,5 +1,4 @@
 import { AbstractControl, FormArray, FormBuilder, FormGroup } from '@angular/forms';
-import { ConsumptionStandard } from '@features/consumption-standards/models/consumption-standards.model';
 
 export class ConsumptionStandardsForm {
      public form: FormGroup = this.createFormsArray();
@@ -10,11 +9,11 @@ export class ConsumptionStandardsForm {
           return this.form.get('items') as FormArray;
      }
 
-     public createForm(data?: ConsumptionStandard): FormGroup {
+     public createForm(): FormGroup {
           return this.fb.group({
-               id: [{ value: data?.id }],
-               consumpion_standard: [data?.consumpion_standard, []],
-               name: [data?.name],
+               id: [''],
+               consumpion_standard: [''],
+               name: [''],
           });
      }
 
