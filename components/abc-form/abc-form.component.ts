@@ -2,22 +2,22 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { AbstractControl, FormArray, FormBuilder } from '@angular/forms';
 import { ConsumptionStandard } from '@features/consumption-standards/models/consumption-standards.model';
 import { BaseFormComponent } from '@shared/components/base-form.component';
-import { ConsumptionStandardsForm } from '@shared/forms/consumption-standards.form';
+import { AbcForm } from '@shared/forms/abc.form';
 
 @Component({
-     selector: 'app-consumption-standards-form',
-     templateUrl: './consumption-standards-form.component.html',
-     styleUrls: ['./consumption-standards-form.component.scss'],
+     selector: 'app-form-abc',
+     templateUrl: './abc-form.component.html',
+     styleUrls: ['./abc-form.component.scss'],
 })
-export class ConsumptionStandardsFormComponent extends BaseFormComponent implements OnInit {
+export class AbcComponent extends BaseFormComponent implements OnInit {
      @Input() public set nrOfRows(nrOfRows: number) {
-          consumptionStandard ? this.addFormItems(nrOfRows) : null;
+          this.addFormItems(nrOfRows);
      }
 
      @Output() public formChange = new EventEmitter<ConsumptionStandard[]>();
      @Output() public isFormValid = new EventEmitter<boolean>();
 
-     public form: ConsumptionStandardsForm = new ConsumptionStandardsForm(this.fb);
+     public form: AbcForm = new AbcForm(this.fb);
      public items: FormArray = this.form.itemsArray;
 
      constructor(private fb: FormBuilder) {
@@ -28,15 +28,14 @@ export class ConsumptionStandardsFormComponent extends BaseFormComponent impleme
           this.checkFormAndEmit();
      }
 
-     public addFormItems(nrOfRows): void {
+     public addFormItems(nrOfRows: number): void {
+          this.items.clear();
           for (let i = 0; i <= nrOfRows; i++) {
-               this.items.push(this.form.createForm(dataArr[i]));
+               this.items.push(this.form.createForm());
           }
      }
 
      public getItemsControls(): AbstractControl[] {
           return this.form.getItemsControls();
      }
-
-     public onSaveStandards(): void {}
 }

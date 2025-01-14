@@ -1,0 +1,31 @@
+{{nrOfRows}}
+<!-- <div [formGroup]="form.form">
+    <ng-container formArrayName="items" *ngFor="let ctrl of getItemsControls(); let z = index">
+        <ng-container [formGroupName]="z">
+            <div class="row">
+                {{z}}
+                <div class="col-md-9 col-sm-9">
+                    <mat-form-field appearance="outline">
+                        <input matInput formControlName="firstname" />
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                        <input matInput formControlName="lastname" />
+                    </mat-form-field>
+                </div>
+            </div>
+        </ng-container>
+    </ng-container>
+</div> -->
+
+<div [formGroup]="form.form">
+    <ng-container formArrayName="items" *ngFor="let ctrl of getItemsControls(); let z = index">
+        <ng-container [formGroupName]="z">
+            <div class="abc-form">
+                <span class="abc-form-label">Imię</span>
+                <input matInput formControlName="firstname" class="abc-form-input" />
+                <span class="abc-form-label">Nazwisko</span>
+                <input matInput formControlName="lastname" />
+            </div>
+        </ng-container>
+    </ng-container>
+</div>
