@@ -1,6 +1,19 @@
+# 2 wersje formularza
+1. ta zakomentowana używ-a Materiala, mogą być z nią problemy
+ - Aplikacja chyba nie jest przygotowana na takie eksperymenty.
+ - Brak jest także chyba styli dla formularza materialowego. - np. @import '~@angular/material/prebuilt-themes/indigo-pink.css';
+ - No i gdybyśmy użyli styli tych mogłoby to mieć wpływ na resztę aplikacji.
+2. Ta nie zakomntowana to prosty formularz z inputami. Nie korzysta z dobroci Material Form Fields.
+   - dodalem proste sttylowanie dla pól i etykiet
 # formularz
- w chwili obecnej formularz nie ma żadnej walidacji
-# dane z formularza są w takiej postaci
+ w chwili obecnej formularz AbcForm nie ma żadnej walidacji, nawet required - choć nie wiem, czy to konieczne
+# dane emitowane z formularza do głownego komponentu 
+  //tu otrzymujemy dane z formularza w postaci tablicy
+  public abcFormChange(formData: AbcData[]): void {
+    console.log(formData);
+  }
+  Tu trzeba by pewnie wrzucić je do głównego modelu danych (?)
+są w takiej postaci
 [
     {
         "id": "",
