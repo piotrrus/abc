@@ -2,16 +2,12 @@
     <ng-container formArrayName="items" *ngFor="let ctrl of getItemsControls(); let z = index">
         <ng-container [formGroupName]="z">
             <div class="row">
-                <div class="col-md-3 col-sm-3">
-                    <mat-label>{{consumptionStandardTable[z].name}}</mat-label>
-                </div>
+{{z}}
                 <div class="col-md-9 col-sm-9">
-                    <mat-form-field appearance="outline" class="form-field-full-width">
+                    <mat-form-field appearance="outline">
                         <input
                             matInput
                             formControlName="consumpion_standard"
-                            appNumberWthDots
-                            placeholder="{{consumptionStandardTable[z].name}}"
                         />
                     </mat-form-field>
                 </div>
