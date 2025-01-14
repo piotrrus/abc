@@ -1,6 +1,5 @@
 # 2 wersje formularza
-1. ta zakomentowana używ-a Materiala, mogą być z nią problemy
- - Aplikacja chyba nie jest przygotowana na takie eksperymenty.
+1. Ta zakomentowana używa Materiala, mogą być z nią problemy, aplikacja chyba nie jest przygotowana na takie eksperymenty.
  - Brak jest także chyba styli dla formularza materialowego. - np. @import '~@angular/material/prebuilt-themes/indigo-pink.css';
  - No i gdybyśmy użyli styli tych mogłoby to mieć wpływ na resztę aplikacji.
 2. Ta nie zakomntowana to prosty formularz z inputami. Nie korzysta z dobroci Material Form Fields.
