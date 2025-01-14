@@ -1,20 +1,22 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { AbstractControl, FormArray, FormBuilder } from '@angular/forms';
-import { ConsumptionStandard } from '@features/consumption-standards/models/consumption-standards.model';
 import { BaseFormComponent } from '@shared/components/base-form.component';
 import { AbcForm } from '@shared/forms/abc.form';
+import { AbcData } from './abc-data.interface';
 
 @Component({
      selector: 'app-form-abc',
      templateUrl: './abc-form.component.html',
      styleUrls: ['./abc-form.component.scss'],
 })
-export class AbcComponent extends BaseFormComponent implements OnInit {
+export class AbcFormComponent extends BaseFormComponent implements OnInit {
      @Input() public set nrOfRows(nrOfRows: number) {
-          this.addFormItems(nrOfRows);
+          // nrOfRows ?
+          this.addFormItems();
+          // : null;
      }
 
-     @Output() public formChange = new EventEmitter<ConsumptionStandard[]>();
+     @Output() public formChange = new EventEmitter<AbcData[]>();
      @Output() public isFormValid = new EventEmitter<boolean>();
 
      public form: AbcForm = new AbcForm(this.fb);
@@ -28,11 +30,12 @@ export class AbcComponent extends BaseFormComponent implements OnInit {
           this.checkFormAndEmit();
      }
 
-     public addFormItems(nrOfRows: number): void {
-          this.items.clear();
-          for (let i = 0; i <= nrOfRows; i++) {
-               this.items.push(this.form.createForm());
-          }
+     public addFormItems(): void {
+          console.log('addItem');
+          // this.items.clear();
+          // for (let i = 0; i <= nrOfRows; i++) {
+          this.items.push(this.form.createForm());
+          // }
      }
 
      public getItemsControls(): AbstractControl[] {
