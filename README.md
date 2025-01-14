@@ -2,8 +2,8 @@
 1. Ta zakomentowana używa Materiala, mogą być z nią problemy, aplikacja chyba nie jest przygotowana na takie eksperymenty.
  - Brak jest także chyba styli dla formularza materialowego. - np. @import '~@angular/material/prebuilt-themes/indigo-pink.css';
  - No i gdybyśmy użyli styli tych mogłoby to mieć wpływ na resztę aplikacji.
-2. Ta nie zakomntowana to prosty formularz z inputami. Nie korzysta z dobroci Material Form Fields.
-   - dodalem proste sttylowanie dla pól i etykiet
+2. Ta nie zakomntowana to prosty formularz z inputami. Nie korzysta z dobroci Material Form Fields. Nie ma też placeholdera.
+   - dodalem proste stylowanie dla pól i etykiet
 # formularz
  w chwili obecnej formularz AbcForm nie ma żadnej walidacji, nawet required - choć nie wiem, czy to konieczne
 # dane emitowane z formularza do głownego komponentu 
