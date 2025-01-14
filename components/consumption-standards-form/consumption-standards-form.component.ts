@@ -10,8 +10,8 @@ import { ConsumptionStandardsForm } from '@shared/forms/consumption-standards.fo
      styleUrls: ['./consumption-standards-form.component.scss'],
 })
 export class ConsumptionStandardsFormComponent extends BaseFormComponent implements OnInit {
-     @Input() public set consumptionStandard(consumptionStandard: ConsumptionStandard[] | null) {
-          consumptionStandard ? this.addFormItems(consumptionStandard) : null;
+     @Input() public set nrOfRows(nrOfRows: number) {
+          consumptionStandard ? this.addFormItems(nrOfRows) : null;
      }
 
      @Output() public formChange = new EventEmitter<ConsumptionStandard[]>();
@@ -19,7 +19,6 @@ export class ConsumptionStandardsFormComponent extends BaseFormComponent impleme
 
      public form: ConsumptionStandardsForm = new ConsumptionStandardsForm(this.fb);
      public items: FormArray = this.form.itemsArray;
-     public consumptionStandardTable: ConsumptionStandard[] = [];
 
      constructor(private fb: FormBuilder) {
           super();
@@ -29,9 +28,8 @@ export class ConsumptionStandardsFormComponent extends BaseFormComponent impleme
           this.checkFormAndEmit();
      }
 
-     public addFormItems(dataArr: ConsumptionStandard[]): void {
-          for (let i = 0; i < dataArr.length; i++) {
-               this.consumptionStandardTable.push(dataArr[i]);
+     public addFormItems(nrOfRows): void {
+          for (let i = 0; i <= nrOfRows; i++) {
                this.items.push(this.form.createForm(dataArr[i]));
           }
      }
