@@ -1,4 +1,6 @@
-# dane
+# formularz
+ w chwili obecnej formularz nie ma żadnej walidacji
+# dane z formularza są w takiej postaci
 [
     {
         "id": "",
