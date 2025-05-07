@@ -1,0 +1,31 @@
+<div class="row modal-header">
+    <div class="col-sm-11">
+        <div class="confirm-modal-title" [class.img]="!data.showImg">{{data.title | translate}}</div>
+    </div>
+    <div *ngIf="data.showCloseIcon" class="col-sm-1 confirm-modal-icon-close">
+        <mat-icon svgIcon="close" class="modal-close-icon" (click)="onClose()"></mat-icon>
+    </div>
+</div>
+<ng-container *ngIf="data.showImg;else cancelModal">
+    <div class="confirm-modal-content">
+        <div class="confirm-modal-picture"></div>
+        <p *ngIf="data.messageTxt">{{data.messageTxt | translate}}</p>
+        <p *ngIf="data.continueTxt">{{data.continueTxt | translate}}</p>
+        <p *ngIf="data.additionalTxt">{{data.additionalTxt | translate}}</p>
+    </div>
+</ng-container>
+<ng-template #cancelModal>
+    <div class="confirm-modal-content">
+        <div class="confirm-modal-icon">
+            <mat-icon>warning</mat-icon>
+        </div>
+        <p class="text-center" *ngIf="data.messageTxt">{{data.messageTxt | translate}}</p>
+    </div>
+</ng-template>
+
+<div class="row modal-button-section">
+    <div class="col-lg-12">
+        <volvo-button variant="secondary" fullWidth size="medium" (click)="onConfirm()"> {{'buttons.yes' | translate}} </volvo-button>
+        <volvo-button variant="primary" fullWidth size="medium" (click)="onClose()"> {{'buttons.no' | translate}} </volvo-button>
+    </div>
+</div>

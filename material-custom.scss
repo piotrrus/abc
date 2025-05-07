@@ -1,0 +1,63 @@
+@import 'colors';
+
+.mat-mdc-text-field-wrapper.mdc-text-field--outlined .mat-mdc-form-field-infix {
+     padding: 10px 0 10px 0 !important;
+}
+
+.mat-mdc-text-field-wrapper .mat-mdc-form-field-flex .mat-mdc-floating-label {
+     top: 20px !important;
+}
+
+.mat-mdc-form-field-infix {
+     min-height: 44px !important;
+}
+
+.mat-mdc-form-text-infix {
+     border-top: 11px solid transparent !important;
+}
+
+.mat-mdc-checkbox-checked.mat-accent .mdc-checkbox__background {
+     background-color: $default-font !important;
+     border-color: $default-font !important;
+}
+
+.mdc-checkbox {
+     .mdc-checkbox__native-control:enabled:checked ~ .mdc-checkbox__background {
+          background-color: $default-font !important;
+          border-color: $default-font !important;
+     }
+
+     &:hover .mdc-checkbox__native-control:enabled:checked ~ .mdc-checkbox__background {
+          background: $default-font !important;
+          border-color: $default-font !important;
+     }
+     .mat-mdc-checkbox-ripple,
+     .mdc-checkbox__ripple {
+          display: none !important;
+     }
+}
+
+.mat-mdc-checkbox-checked.mat-accent.mat-mdc-checkbox-disabled .mdc-checkbox__background {
+     background-color: $grey-400 !important;
+     border-color: $grey-400 !important;
+}
+
+.mat-primary .mat-pseudo-checkbox-checked.mat-pseudo-checkbox-full {
+     background: $default-font !important;
+}
+
+.mat-mdc-dialog-container .mdc-dialog__surface {
+     padding: 24px;
+}
+
+.mat-mdc-icon-button {
+     &:hover,
+     &:active {
+          .mat-mdc-button-persistent-ripple::before {
+               opacity: 0 !important;
+          }
+     }
+     .mat-mdc-button-ripple {
+          opacity: 0 !important;
+     }
+}
